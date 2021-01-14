@@ -3,6 +3,7 @@ from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
 from airflow.contrib.hooks.snowflake_hook import SnowflakeHook
 import os
+from dags.hello import hello
 
 args = {
     "owner": "airflow",
@@ -12,7 +13,7 @@ args = {
 
 def hello_world(**context):
     hook = SnowflakeHook(snowflake_conn_id="sf_analytics_db")
-    print("hello world")
+    hello()
 
     return True
 
