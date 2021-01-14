@@ -26,4 +26,4 @@ jobs:
         if [ -f CI_tests/requirements.txt ]; then pip install -r CI_tests/requirements.txt; fi
     - name: Test with pytest
       run: |
-        pytest CI_tests/
+        python -m pytest CI_tests/
