@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f CI_tests/requirements.txt ]; then pip install -r CI_tests/requirements.txt; fi
+        pip install -r CI_tests/requirements2.txt
     - name: Test with pytest
       run: |
         python -m pytest CI_tests/
